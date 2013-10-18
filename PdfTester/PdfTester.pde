@@ -3,7 +3,8 @@ import processing.pdf.*;
 
 void setup() 
 {
-  size(2000, 2000, PDF, "Line.pdf");
+
+  size(2000, 2000);
 }
 
 void draw() 
@@ -13,6 +14,7 @@ void draw()
   strokeWeight(20.0);
   line(200, 0, width/2, height);
   
-  exit();  // Quit the program
+  //exit();  // Quit the program
 }
+
 
