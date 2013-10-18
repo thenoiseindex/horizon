@@ -4,33 +4,49 @@
 
 import processing.pdf.*;
 
+TimerScheduler clock; // Instance of the main Timer object
+
 float rectDim = 0.005;
 //float rectX = 0.0001;
+boolean drawing = true;
+double i = 0;
+float j = 0;
+double x=0.00001;
 
 void setup() {
-  size (1000, 300,PDF,"Horizon.pdf");
-}
+  size (1000, 300, PDF, "Horizon.pdf");
+  clock = new TimerScheduler(10);  // Instantiate the Timer and set it to 1000ms
+} 
 
 void draw() {
   background(0);
-  float x=0.00001;
-  for (float i = 0; i <height; i=i+x) {
-    for (float j = 0; j <width; j=j+x) {
 
-      //fill(15+i);
-      //strokeWeight(0.3);
-      stroke(100+x*100);
-      //noStroke();
-
-      Unit(rectDim+(j+width/2), rectDim+(i+height/3), 0, 0, 0+x);
-      Unit(width/2-j, rectDim+(i+height/3), 0, 0, 0+x);
-
-      x = ((x+0.0009)+random(0.00009));
-      
-      
-    }
+  while (drawing) {
   }
+
   exit();
+}
+
+void draw_map(double error) {
+  
+  if(i >= height){
+    drawing = false;
+    return;
+  }
+  
+  if(j >= width) {
+    i=i+x;
+    j = 0;
+  }
+
+  stroke(255, 255, 255, (int)(x*2550));
+
+  Unit(rectDim+(j+width/2), rectDim+((float)i+height/3), (float)x, (float)x, 0);
+  Unit(width/2-j, rectDim+((float)i+height/3), (float)x, (float)x, 0);
+
+  x += error;
+  j=j+(float)x;
+  println("error " + error);
 }
 
 
@@ -39,10 +55,9 @@ void Unit(float xloc, float yloc, float xsize, float ysize, float zpoint ) {
   //stroke();
   rectMode(CENTER);
   point(xloc, yloc);
-  point(xloc+1.5, yloc);
-  point(xloc, yloc+1.5);
-  point(xloc+1.5, yloc+1.5);
-  //fill(50);
-  //noStroke();
-  //rect(xloc,yloc,10,10);
+  point(xloc+xsize, yloc);
+  point(xloc, yloc+ysize);
+  point(xloc+xsize, yloc-ysize);
+
 }
+
