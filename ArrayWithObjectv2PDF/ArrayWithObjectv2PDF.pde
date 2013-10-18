@@ -38,10 +38,11 @@ void draw_map(double error) {
   if(j >= width) {
     i=i+x;
     j = 0;
+    alpha = (int)(255 - (x)*300);
   }
 
   // change for alpha
-  alpha = (int)(x*2550);
+
   stroke(255, 255, 255, alpha);
 
   Unit(rectDim+(j+width/2), rectDim+((float)i+height/3), (float)x);
