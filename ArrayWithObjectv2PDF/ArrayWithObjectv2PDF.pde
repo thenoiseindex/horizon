@@ -12,6 +12,7 @@ boolean drawing = true;
 double i = 0;
 float j = 0;
 double x=0.00001;
+int alpha;
 
 void setup() {
   size (1000, 300, PDF, "Horizon.pdf");
