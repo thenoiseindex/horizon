@@ -39,10 +39,12 @@ void draw_map(double error) {
     j = 0;
   }
 
-  stroke(255, 255, 255, (int)(x*2550));
+  // change for alpha
+  alpha = (int)(x*2550);
+  stroke(255, 255, 255, alpha);
 
-  Unit(rectDim+(j+width/2), rectDim+((float)i+height/3), (float)x, (float)x, 0);
-  Unit(width/2-j, rectDim+((float)i+height/3), (float)x, (float)x, 0);
+  Unit(rectDim+(j+width/2), rectDim+((float)i+height/3), (float)x);
+  Unit(width/2-j, rectDim+((float)i+height/3), (float)x);
 
   x += error;
   j=j+(float)x;
@@ -50,14 +52,15 @@ void draw_map(double error) {
 }
 
 
-void Unit(float xloc, float yloc, float xsize, float ysize, float zpoint ) {
+void Unit(float xloc, float yloc, float error) {
   strokeWeight(0.5);
   //stroke();
   rectMode(CENTER);
   point(xloc, yloc);
-  point(xloc+xsize, yloc);
-  point(xloc, yloc+ysize);
-  point(xloc+xsize, yloc-ysize);
+  // change for moving error
+  point(xloc+error, yloc);
+  point(xloc, yloc+error);
+  point(xloc+error, yloc-error);
 
 }
 
