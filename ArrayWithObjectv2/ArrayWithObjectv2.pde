@@ -2,11 +2,11 @@
 //Holy shit it works
 //More exponential math growth/and/or with data input.
 
-float rectDim = 0.005;
+float rectDim = 0.5;
 //float rectX = 0.0001;
 
 void setup(){
-  size(1280,800,P3D);
+  size(2400,600,P3D);
 }
 
 void draw(){
