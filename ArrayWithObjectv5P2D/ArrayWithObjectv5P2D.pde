@@ -8,15 +8,14 @@ ControlP5 cp5;
 float rectDim = 0.5;
 int printHeight = 8;
 int printwidth = 36;
-int scaleSize = 40;
-int alpha_decay;
-float recip = 1.0/255.0;
+int scaleSize = 35;
+int alpha_decay = 6;
 
 void setup() {
   size(printwidth*scaleSize, printHeight*scaleSize);
   //hint(ENABLE_STROKE_PURE);
   cp5 = new ControlP5(this);
-  cp5.addSlider("alpha_fade", 0.0, 10.0, 0.02, 20, 20, 100, 14);
+  cp5.addSlider("alpha_fade", 0.0, 10.0, alpha_decay, 20, 20, 100, 14);
 }
 
 void draw() {
