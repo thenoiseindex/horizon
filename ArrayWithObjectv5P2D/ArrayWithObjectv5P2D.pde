@@ -6,7 +6,7 @@ ControlP5 cp5;
 //More exponential math growth/and/or with data input.
 
 float rectDim = 0.5;
-int printHeight = 8;
+int printHeight = 14;
 int printwidth = 36;
 int scaleSize = 35;
 int alpha_decay = 6;
@@ -28,8 +28,8 @@ void draw() {
 
       stroke(2+i);
       //float alpha = pow(z, 5);
-      Unit(rectDim+(j+width/2), rectDim+(i+height/3), 0, 0, z);
-      Unit(width/2-j, rectDim+(i+height/3), 0, 0, z);
+      Unit(rectDim+(j+width/2), rectDim+(i+height/6), 0, 0, z);
+      Unit(width/2-j, rectDim+(i+height/6), 0, 0, z);
 
       x = ((x+0.0009)+random(0.00009));
     }
