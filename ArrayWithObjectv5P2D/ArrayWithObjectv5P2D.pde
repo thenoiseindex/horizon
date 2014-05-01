@@ -1,9 +1,11 @@
+/*Use this version of the code as template for the PROPORTIONS of "Sky" to "Ground" and 14 by 36 to be print ready.
+
+-JBlasco.
+*/
+
 import controlP5.*;
 ControlP5 cp5;
 
-//RectDim has to be smaller than incrementer.
-//Holy shit it works
-//More exponential math growth/and/or with data input.
 
 float rectDim = 0.5;
 int printHeight = 14;
