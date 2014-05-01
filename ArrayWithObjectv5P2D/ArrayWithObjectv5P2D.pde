@@ -10,7 +10,7 @@ ControlP5 cp5;
 
 float rectDim = 0.5;
 int printHeight = 12;
-int printwidth = 36;
+int printwidth = 32;
 int scaleSize = 35;
 int alpha_decay = 6;
 
