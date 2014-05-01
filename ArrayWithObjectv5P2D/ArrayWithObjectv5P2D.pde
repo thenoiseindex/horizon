@@ -1,4 +1,5 @@
-/*Use this version of the code as template for the PROPORTIONS of "Sky" to "Ground" and 14 by 36 to be print ready.
+/*Use this version of the code as template for the PROPORTIONS are Cinemascope: 2.66 to 1 ( in this case 42.56(rounded) to 16)
+Proportion of "sky" is height/6
 
 -JBlasco.
 */
@@ -8,7 +9,7 @@ ControlP5 cp5;
 
 
 float rectDim = 0.5;
-int printHeight = 14;
+int printHeight = 12;
 int printwidth = 36;
 int scaleSize = 35;
 int alpha_decay = 6;
