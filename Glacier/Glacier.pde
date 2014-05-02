@@ -24,8 +24,7 @@ void draw() {
     for (int y = y_start; y < y_stop; y++) {
       stroke((255-(float)(y-y_start)/(float)(y_stop-y_start)*255)*pow(random(0.5, 1.0),2));
       point(x, y_start+ice[x]);
-      point(printWidth-x,y_start+ice[x]);
-      
+      point(printWidth-x-1,y_start+ice[x]);
 
       ice[x] = ice[x]+random(0.0, 1.0);
     }
