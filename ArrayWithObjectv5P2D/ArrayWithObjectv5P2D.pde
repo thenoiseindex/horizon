@@ -41,14 +41,17 @@ void draw() {
 
 void Unit(float xloc, float yloc, float xsize, float ysize, float zpoint ) {
   //println(zpoint);
+  //noiseDetail(10,0.45);
+  //strokeWeight(max(noise(xloc+random(.00009), yloc+random(.00009)), 0.3));
+  strokeWeight(random(.4,1) );
   stroke(255, zpoint);
   rectMode(CENTER);
   point(xloc, yloc);
   point(xloc+3, yloc);
   point(xloc, yloc+3);
   point(xloc+3, yloc+3);
-  fill(50);
-  noStroke();
+  //fill(50);
+  //noStroke();
   //rect(xloc,yloc,10,10);
 }
 
