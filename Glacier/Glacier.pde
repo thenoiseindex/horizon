@@ -1,8 +1,8 @@
 import processing.pdf.*;
 
 int scaleSize = 80;
-int printHeight = 8*scaleSize;
-int printWidth = 36*scaleSize;
+int printHeight = 12*scaleSize;
+int printWidth = 32*scaleSize;
 int y_start = (int)(printHeight/3.0);
 int y_stop = y_start*3;
 float[] ice = new float[printWidth];
