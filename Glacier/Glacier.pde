@@ -12,7 +12,7 @@ TimerScheduler clock; // Instance of the main Timer object
 
 void setup() {
   //size((int)printWidth, (int)printHeight);
-  size ((int)printWidth, (int)printHeight, PDF, "Glacier_20x_darker.pdf");
+  size ((int)printWidth, (int)printHeight, PDF, "Glacier_20x_magic2.pdf");
 
   hint(ENABLE_STROKE_PURE);
   for (int i = 0; i < printWidth; i++) {
@@ -36,14 +36,16 @@ void draw() {
 
 int x = 0;
 int y = y_start;
+float inc = 0.001;
 
 void draw_map(double error) {
 
   if ( x < printWidth) {
     //non linear fade from white to black
-    stroke((255-(float)(y-y_start)/(float)(y_stop-y_start)*255)*pow(random(0.5, 1.0), 10));
-    point(x, y_start+ice[x]);
+    stroke((255-(float)(y-y_start)/(float)(y_stop-y_start)*255)*pow(random(0.5, 1.0), 7));
+    point(x+inc, y_start+ice[x]);
     //point(printWidth-x-1, y_start+ice[x]);
+    inc = ((inc+0.009)+random(0.0009));
 
     ice[x] += error-0.5+random(0.0,0.5);
 
