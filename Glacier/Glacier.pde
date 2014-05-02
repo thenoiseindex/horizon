@@ -1,6 +1,6 @@
 import processing.pdf.*;
 
-int scaleSize = 80;
+int scaleSize = 20;
 int printHeight = 12*scaleSize;
 int printWidth = 32*scaleSize;
 int y_start = (int)(printHeight/3.0);
@@ -12,7 +12,7 @@ TimerScheduler clock; // Instance of the main Timer object
 
 void setup() {
   //size((int)printWidth, (int)printHeight);
-  size ((int)printWidth, (int)printHeight, PDF, "Glacier_80x.pdf");
+  size ((int)printWidth, (int)printHeight, PDF, "Glacier_20x_darker.pdf");
 
   hint(ENABLE_STROKE_PURE);
   for (int i = 0; i < printWidth; i++) {
@@ -39,13 +39,13 @@ int y = y_start;
 
 void draw_map(double error) {
 
-  if ( x < printWidth/2) {
+  if ( x < printWidth) {
     //non linear fade from white to black
-    stroke((255-(float)(y-y_start)/(float)(y_stop-y_start)*255)*pow(random(0.5, 1.0), 2));
+    stroke((255-(float)(y-y_start)/(float)(y_stop-y_start)*255)*pow(random(0.5, 1.0), 10));
     point(x, y_start+ice[x]);
-    point(printWidth-x-1, y_start+ice[x]);
+    //point(printWidth-x-1, y_start+ice[x]);
 
-    ice[x] += error;
+    ice[x] += error-0.5+random(0.0,0.5);
 
     // update y
     y++;
